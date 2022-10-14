@@ -23,10 +23,10 @@
 
     <div class="row" v-else-if="Object.keys(movie).length !==0" id="movie">
       <div class="columns small-7">
-        <h4>{{movie.name}}</h4>
         <img :src="movie.image.original" :alt="movie.name">
       </div>
       <div class="columns small-5">
+        <h4>{{movie.name}}</h4>
         <p v-html="movie.summary"></p>
         <small><strong>Premiered:</strong> {{ movie.premiered }}</small>
       </div>
