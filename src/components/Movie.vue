@@ -67,10 +67,6 @@ export default {
           this.loading = false
           this.error_message = ''
           bus.$emit('new_movie', data.id)
-          if (!data) {
-            this.error_message = `Sorry, move with '${title}' no found. Try searching for "Fairy tail" or "The boondocks" instead.`
-            return
-          }
           this.movie = data
         }).catch((e) => {
           this.error_message = `Sorry, move with '${title}' no found. Try searching for "Fairy tail" or "The boondocks" instead.`
