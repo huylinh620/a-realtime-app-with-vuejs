@@ -73,7 +73,8 @@ export default {
           }
           this.movie = data
         }).catch((e) => {
-          console.log(e)
+          this.error_message = `Sorry, move with '${title}' no found. Try searching for "Fairy tail" or "The boondocks" instead.`
+          return e
         })
     }
   }

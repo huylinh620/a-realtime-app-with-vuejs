@@ -32,7 +32,6 @@
 
 <script>
 import Pusher from 'pusher-js'
-import { push } from 'shelljs/commands'
 import bus from '../bus'
 
 const MOCK_REVIEWS = [
@@ -88,8 +87,9 @@ export default {
     subscribe () {
       let pusher = new Pusher('ab459c6560b738a5ddc5', { cluster: 'ap1' })
       pusher.subscribe('reviews')
-      push.bind('review_added', data => {
+      pusher.bind('review_added', data => {
         this.mockReviews.unshift(data.review)
+        console.log(this.mockReviews)
       })
     }
   },

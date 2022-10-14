@@ -13,9 +13,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/**': {
-        "*": "http://[::1]:5000", // you should change this, depending on the port your server is running on
-        // secure: false,
-        // changeOrigin: true,
+        target: 'http://localhost:5000', // you should change this, depending on the port your server is running on
+        changeOrigin: true,
         pathRewrite: {
           '^/api': ''
         }
